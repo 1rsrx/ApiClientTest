@@ -20,16 +20,13 @@ class ViewController: UIViewController {
     @IBAction func didTapButton(_ sender: Any) {
         let api = QiitaApiGetUserProfile()
         api.execute()
-            .sink { completion in
-                switch completion {
-                case .finished:
-                    break
+            .sink { result in
+                switch result {
+                case .success(let response):
+                    print(response)
                 case .failure(let err):
-                    print("失敗: \(err)")
+                    print(err)
                 }
-            } receiveValue: { json in
-                print("成功")
-                print(json)
             }
             .store(in: &cancellables)
     }
