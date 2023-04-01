@@ -10,7 +10,7 @@ import Combine
 
 class QiitaApiGetUserProfile {
     
-    func execute() -> AnyPublisher<QiitaApiGetUserProfileResponseJSON, ApiError> {
+    func execute() -> AnyPublisher<Result<QiitaApiGetUserProfileResponseJSON, ApiError>, Never> {
         let request = QiitaApiGetUserProfileRequest()
         return ApiClient().request(request)
     }
