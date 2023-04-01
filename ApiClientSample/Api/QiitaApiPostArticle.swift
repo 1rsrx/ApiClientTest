@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class QiitaApiPostArticle {
-    func execute() -> AnyPublisher<QiitaApiPostArticleResponseJSON, ApiError> {
+    func execute() -> AnyPublisher<Result<QiitaApiPostArticleResponseJSON, ApiError>, Never> {
         let article = QiitaApiPostArticleRequestJSON(
             body: "本文",
             private: true,
