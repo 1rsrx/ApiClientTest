@@ -32,8 +32,8 @@ struct QiitaApiGetUserProfileRequest: BaseApiRequest {
         return .get
     }
     
-    var header: [String : String] {
-        return ApiHeaderConstant.qiita
+    var header: HttpHeader {
+        return HttpHeader(ApiHeaderConstant.qiita)
     }
     
     var httpBody: Encodable? = nil

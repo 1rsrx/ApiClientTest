@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C60FF4F029D8F4A600C54D58 /* QiitaAPiDeleteArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60FF4EF29D8F4A600C54D58 /* QiitaAPiDeleteArticle.swift */; };
+		C60FF4F229D8F4C900C54D58 /* EmptyResopnse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60FF4F129D8F4C900C54D58 /* EmptyResopnse.swift */; };
 		C6B8B14129D8041E0095E8C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8B14029D8041E0095E8C2 /* AppDelegate.swift */; };
 		C6B8B14329D8041E0095E8C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8B14229D8041E0095E8C2 /* SceneDelegate.swift */; };
 		C6B8B14529D8041E0095E8C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8B14429D8041E0095E8C2 /* ViewController.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C60FF4EF29D8F4A600C54D58 /* QiitaAPiDeleteArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaAPiDeleteArticle.swift; sourceTree = "<group>"; };
+		C60FF4F129D8F4C900C54D58 /* EmptyResopnse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResopnse.swift; sourceTree = "<group>"; };
 		C6B8B13D29D8041E0095E8C2 /* ApiClientSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiClientSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B8B14029D8041E0095E8C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6B8B14229D8041E0095E8C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				C6B8B15729D8044D0095E8C2 /* ApiClient.swift */,
 				C6B8B15C29D804C90095E8C2 /* QiitaApiPostArticle.swift */,
 				C6B8B16429D852490095E8C2 /* QiitaApiGetUserProfile.swift */,
+				C60FF4EF29D8F4A600C54D58 /* QiitaAPiDeleteArticle.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				C6B8B15E29D805510095E8C2 /* QiitaApiErrorResponse.swift */,
+				C60FF4F129D8F4C900C54D58 /* EmptyResopnse.swift */,
 				C6B8B15929D804A60095E8C2 /* QiitaApiPostArticleRequestJSON.swift */,
 				C6B8B16029D805870095E8C2 /* QiitaApiPostArticleResponseJSON.swift */,
 				C6B8B16229D852220095E8C2 /* QiitaApiGetUserProfileResponseJSON.swift */,
@@ -202,9 +208,11 @@
 				C6B8B16E29D863610095E8C2 /* ApiKey.swift in Sources */,
 				C6B8B16B29D855B10095E8C2 /* AppConstant.swift in Sources */,
 				C6B8B15629D804390095E8C2 /* BaseApiRequest.swift in Sources */,
+				C60FF4F029D8F4A600C54D58 /* QiitaAPiDeleteArticle.swift in Sources */,
 				C6B8B14129D8041E0095E8C2 /* AppDelegate.swift in Sources */,
 				C6B8B14329D8041E0095E8C2 /* SceneDelegate.swift in Sources */,
 				C6B8B16529D852490095E8C2 /* QiitaApiGetUserProfile.swift in Sources */,
+				C60FF4F229D8F4C900C54D58 /* EmptyResopnse.swift in Sources */,
 				C6B8B15829D8044D0095E8C2 /* ApiClient.swift in Sources */,
 				C6B8B15A29D804A60095E8C2 /* QiitaApiPostArticleRequestJSON.swift in Sources */,
 				C6B8B16129D805870095E8C2 /* QiitaApiPostArticleResponseJSON.swift in Sources */,
@@ -363,6 +371,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -391,6 +400,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

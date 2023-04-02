@@ -32,6 +32,28 @@ protocol BaseApiRequest {
     var baseURL: String { get }
     var path: String { get }
     var method: HttpMethod { get }
-    var header: [String: String] { get }
+    var header: HttpHeader { get }
     var httpBody: Encodable? { get }
+}
+
+class HttpHeader {
+    private var header: [String: String]
+    
+    init(_ header: [String: String]) {
+        self.header = header
+    }
+    
+    func addValues(_ values: [String: String]) -> HttpHeader {
+        var header = self.header
+        
+        values.forEach { (key, value) in
+            header[key] = value
+        }
+        
+        return HttpHeader(header)
+    }
+    
+    func values() -> [String:String] {
+        return self.header
+    }
 }
