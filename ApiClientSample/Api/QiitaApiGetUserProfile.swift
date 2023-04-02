@@ -16,7 +16,7 @@ class QiitaApiGetUserProfile {
     }
 }
 
-struct QiitaApiGetUserProfileRequest: BaseApiRequest {
+struct QiitaApiGetUserProfileRequest: HttpRequestable {
     typealias Response = QiitaApiGetUserProfileResponseJSON
     typealias ErrorResponse = QiitaApiErrorResponse
     

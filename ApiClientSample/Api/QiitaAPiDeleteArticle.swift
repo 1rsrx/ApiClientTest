@@ -15,7 +15,7 @@ class QiitaApiDeleteArticle {
     }
 }
 
-struct QiitaApiDeleteArticleRequest: BaseApiRequest {
+struct QiitaApiDeleteArticleRequest: HttpRequestable {
     typealias Response = EmptyResponse
     typealias ErrorResponse = QiitaApiErrorResponse
     

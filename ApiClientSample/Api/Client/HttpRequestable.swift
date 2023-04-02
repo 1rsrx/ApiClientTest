@@ -25,7 +25,7 @@ enum HttpMethod: String {
     case patch = "PATCH"
 }
 
-protocol BaseApiRequest {
+protocol HttpRequestable {
     associatedtype Response: Decodable
     associatedtype ErrorResponse: Decodable
     

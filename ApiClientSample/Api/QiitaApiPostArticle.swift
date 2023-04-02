@@ -18,7 +18,7 @@ class QiitaApiPostArticle {
     }
 }
 
-struct QiitaApiRequest: BaseApiRequest {
+struct QiitaApiRequest: HttpRequestable {
     typealias Response = QiitaApiPostArticleResponseJSON
     typealias ErrorResponse = QiitaApiErrorResponse
     

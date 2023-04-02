@@ -10,7 +10,7 @@ import Combine
 
 class ApiClient {
     
-    func request<T: BaseApiRequest>(
+    func request<T: HttpRequestable>(
         _ request: T,
         completion: @escaping ((Result<T.Response, ApiError>) -> Void)
     ) {
@@ -83,7 +83,7 @@ class ApiClient {
         task.resume()
     }
     
-    func request<T: BaseApiRequest>(
+    func request<T: HttpRequestable>(
         _ request: T
     ) -> AnyPublisher<Result<T.Response, ApiError>, Never> {
         return Future { promise in
@@ -94,7 +94,7 @@ class ApiClient {
         .eraseToAnyPublisher()
     }
     
-    func request<T: BaseApiRequest>(
+    func request<T: HttpRequestable>(
         _ request: T
     ) async -> Result<T.Response, ApiError> {
         return await withCheckedContinuation { continuation in
