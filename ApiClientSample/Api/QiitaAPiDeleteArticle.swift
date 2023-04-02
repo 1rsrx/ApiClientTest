@@ -9,9 +9,9 @@ import Foundation
 import Combine
 
 class QiitaApiDeleteArticle {
-    func execute() -> AnyPublisher<Result<EmptyResponse, ApiError>, Never> {
-        let request = QiitaApiDeleteArticleRequest(itemID: "itemid")
-        return ApiClient().request(request)
+    func execute(itemID: String) async -> Result<EmptyResponse, ApiError> {
+        let request = QiitaApiDeleteArticleRequest(itemID: itemID)
+        return await ApiClient().request(request)
     }
 }
 
