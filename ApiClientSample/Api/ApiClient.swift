@@ -59,7 +59,7 @@ class ApiClient {
                     let object = try JSONDecoder().decode(T.Response.self, from: data)
                     completion(Result<T.Response, ApiError>.success(object))
                 } catch {
-                    // 成功だが、レスポンスが空の場合
+                    // 空レスポンスが成功の場合
                     if String(data: data, encoding: .utf8) == "" {
                         if let emptyResponse = EmptyResponse() as? T.Response {
                             completion(Result<T.Response, ApiError>.success(emptyResponse))
