@@ -73,7 +73,7 @@ class ApiClient {
                 // 失敗
                 do {
                     let object = try JSONDecoder().decode(T.ErrorResponse.self, from: data)
-                    completion(Result<T.Response, ApiError>.failure(.responseError(data: object)))
+                    completion(Result<T.Response, ApiError>.failure(.responseError(status: statusCode, data: object)))
                 } catch {
                     completion(Result<T.Response, ApiError>.failure(.http(status: statusCode, data: data)))
                 }

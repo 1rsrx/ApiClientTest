@@ -9,18 +9,12 @@ import Foundation
 import Combine
 
 class QiitaApiPostArticle {
-    func execute() -> AnyPublisher<Result<QiitaApiPostArticleResponseJSON, ApiError>, Never> {
-        let article = QiitaApiPostArticleRequestJSON(
-            body: "本文",
-            private: true,
-            tags: [
-                .init(name: "swift", versions: ["0.0.1"])
-            ],
-            title: "title",
-            tweet: false
-        )
+    func execute(
+        article: QiitaApiPostArticleRequestJSON,
+        completion: @escaping ((Result<QiitaApiPostArticleResponseJSON, ApiError>) -> Void)
+    ) {
         let request = QiitaApiRequest(httpBody: article)
-        return ApiClient().request(request)
+        ApiClient().request(request, completion: completion)
     }
 }
 
