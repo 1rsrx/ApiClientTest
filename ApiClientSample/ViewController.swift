@@ -41,6 +41,7 @@ class ViewController: UIViewController {
     @IBAction func didTapGetButton(_ sender: Any) {
         let api = QiitaApiGetUserProfile()
         api.execute()
+            .receive(on: RunLoop.main)
             .sink { result in
                 switch result {
                 case .success(let response):

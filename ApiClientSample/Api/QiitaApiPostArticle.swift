@@ -13,12 +13,12 @@ class QiitaApiPostArticle {
         article: QiitaApiPostArticleRequestJSON,
         completion: @escaping ((Result<QiitaApiPostArticleResponseJSON, ApiError>) -> Void)
     ) {
-        let request = QiitaApiRequest(httpBody: article)
+        let request = QiitaApiPostArticleRequest(httpBody: article)
         ApiClient().request(request, completion: completion)
     }
 }
 
-struct QiitaApiRequest: HttpRequestable {
+struct QiitaApiPostArticleRequest: HttpRequestable {
     typealias Response = QiitaApiPostArticleResponseJSON
     typealias ErrorResponse = QiitaApiErrorResponse
     
@@ -36,6 +36,8 @@ struct QiitaApiRequest: HttpRequestable {
     
     var header: HttpHeader {
         return HttpHeader(ApiHeaderConstant.qiita)
+            .addValues([:])
+            .addValues([:])
     }
     
     var httpBody: Encodable?

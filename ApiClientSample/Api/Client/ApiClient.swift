@@ -23,9 +23,9 @@ class ApiClient {
         urlRequest.httpMethod = request.method.rawValue
         urlRequest.allHTTPHeaderFields = request.header.values()
         
-        if let httpBody = request.httpBody {
-            let httpBodyData = try! JSONEncoder().encode(httpBody)
-            urlRequest.httpBody = httpBodyData
+        if let httpBody = request.httpBody,
+        let bodyData = try? JSONEncoder().encode(httpBody) {
+            urlRequest.httpBody = bodyData
         }
         
         print("start \(urlRequest.httpMethod ?? "") \(urlRequest.url?.absoluteString ?? "")")
@@ -73,9 +73,9 @@ class ApiClient {
                 // 失敗
                 do {
                     let object = try JSONDecoder().decode(T.ErrorResponse.self, from: data)
-                    completion(Result<T.Response, ApiError>.failure(.responseError(status: statusCode, data: object)))
+                    completion(Result<T.Response, ApiError>.failure(.errorResponse(status: statusCode, data: object)))
                 } catch {
-                    completion(Result<T.Response, ApiError>.failure(.http(status: statusCode, data: data)))
+                    completion(Result<T.Response, ApiError>.failure(.error(status: statusCode, data: data)))
                 }
             }
         }

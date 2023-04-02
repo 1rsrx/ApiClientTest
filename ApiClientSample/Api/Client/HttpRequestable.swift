@@ -13,8 +13,8 @@ enum ApiError: Error {
     case response
     case emptyResponse
     case parse
-    case http(status: Int, data: Data)
-    case responseError(status: Int, data: Decodable)
+    case errorResponse(status: Int, data: Decodable)
+    case error(status: Int, data: Data)
 }
 
 enum HttpMethod: String {
