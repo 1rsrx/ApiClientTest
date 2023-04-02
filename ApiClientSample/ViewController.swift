@@ -18,14 +18,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didTapButton(_ sender: Any) {
-        let api = QiitaApiGetUserProfile()
+        let api = QiitaApiDeleteArticle()
         api.execute()
             .sink { result in
                 switch result {
                 case .success(let response):
-                    print(response)
+                    print("成功: ", response)
                 case .failure(let err):
-                    print(err)
+                    print("エラー: ", err)
                 }
             }
             .store(in: &cancellables)

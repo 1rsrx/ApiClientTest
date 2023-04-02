@@ -40,8 +40,8 @@ struct QiitaApiRequest: BaseApiRequest {
         return .post
     }
     
-    var header: [String : String] {
-        return ApiHeaderConstant.qiita
+    var header: HttpHeader {
+        return HttpHeader(ApiHeaderConstant.qiita)
     }
     
     var httpBody: Encodable?
