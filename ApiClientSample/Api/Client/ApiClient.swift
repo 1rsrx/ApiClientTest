@@ -10,6 +10,12 @@ import Combine
 
 class ApiClient {
     
+    let session: URLSession
+    
+    init(session: URLSession) {
+        self.session = session
+    }
+    
     func request<T: HttpRequestable>(
         _ request: T,
         completion: @escaping ((Result<T.Response, ApiError>) -> Void)
@@ -29,7 +35,7 @@ class ApiClient {
         }
         
         print("start \(urlRequest.httpMethod ?? "") \(urlRequest.url?.absoluteString ?? "")")
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, err in
+        let task = session.dataTask(with: urlRequest) { data, response, err in
             if let err = err {
                 if let _ = err as? URLError {
                     completion(Result<T.Response, ApiError>.failure(.network))
