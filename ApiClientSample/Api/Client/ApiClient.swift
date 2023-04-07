@@ -24,7 +24,7 @@ class ApiClient {
         urlRequest.allHTTPHeaderFields = request.header.values()
         
         if let httpBody = request.httpBody,
-        let bodyData = try? JSONEncoder().encode(httpBody) {
+           let bodyData = try? JSONEncoder().encode(httpBody) {
             urlRequest.httpBody = bodyData
         }
         
@@ -39,7 +39,7 @@ class ApiClient {
                 completion(Result<T.Response, ApiError>.failure(.response))
                 return
             }
-
+            
             guard let response = response as? HTTPURLResponse,
                   let data = data else {
                 completion(Result<T.Response, ApiError>.failure(.emptyResponse))
@@ -61,8 +61,8 @@ class ApiClient {
                 } catch {
                     // 空レスポンスが成功の場合
                     if String(data: data, encoding: .utf8) == "" {
-                        if let emptyResponse = EmptyResponse() as? T.Response {
-                            completion(Result<T.Response, ApiError>.success(emptyResponse))
+                        if T.Response.self == EmptyResponse.self {
+                            completion(Result<T.Response, ApiError>.success(EmptyResponse() as! T.Response))
                             return
                         }
                     }
@@ -70,13 +70,7 @@ class ApiClient {
                     completion(Result<T.Response, ApiError>.failure(.parse))
                 }
             } else {
-                // 失敗
-                do {
-                    let object = try JSONDecoder().decode(T.ErrorResponse.self, from: data)
-                    completion(Result<T.Response, ApiError>.failure(.errorResponse(status: statusCode, data: object)))
-                } catch {
-                    completion(Result<T.Response, ApiError>.failure(.error(status: statusCode, data: data)))
-                }
+                completion(Result<T.Response, ApiError>.failure(.error(status: statusCode, data: data)))
             }
         }
         

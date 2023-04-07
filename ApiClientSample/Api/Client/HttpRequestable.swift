@@ -27,7 +27,6 @@ enum HttpMethod: String {
 
 protocol HttpRequestable {
     associatedtype Response: Decodable
-    associatedtype ErrorResponse: Decodable
     
     var baseURL: String { get }
     var path: String { get }

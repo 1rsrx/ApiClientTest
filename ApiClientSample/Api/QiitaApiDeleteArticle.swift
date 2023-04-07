@@ -17,7 +17,6 @@ class QiitaApiDeleteArticle {
 
 struct QiitaApiDeleteArticleRequest: HttpRequestable {
     typealias Response = EmptyResponse
-    typealias ErrorResponse = QiitaApiErrorResponse
     
     var baseURL: String {
         return AppConstant.Api.qiitaBaseURL
