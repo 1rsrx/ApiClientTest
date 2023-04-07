@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         let api = QiitaApiDeleteArticle()
         
         Task {
-            let result = await api.execute(itemID: "e3766591a506755a2d8d")
+            let result = await api.execute(itemID: "2d6fb83af00f94c53d32")
             
             switch result {
             case .success(let response):
