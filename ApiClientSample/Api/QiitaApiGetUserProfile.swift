@@ -18,7 +18,6 @@ class QiitaApiGetUserProfile {
 
 struct QiitaApiGetUserProfileRequest: HttpRequestable {
     typealias Response = QiitaApiGetUserProfileResponseJSON
-    typealias ErrorResponse = QiitaApiErrorResponse
     
     var baseURL: String {
         return AppConstant.Api.qiitaBaseURL

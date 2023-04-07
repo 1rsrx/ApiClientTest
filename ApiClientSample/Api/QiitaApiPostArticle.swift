@@ -20,7 +20,6 @@ class QiitaApiPostArticle {
 
 struct QiitaApiPostArticleRequest: HttpRequestable {
     typealias Response = QiitaApiPostArticleResponseJSON
-    typealias ErrorResponse = QiitaApiErrorResponse
     
     var baseURL: String {
         return AppConstant.Api.qiitaBaseURL
