@@ -7,16 +7,6 @@
 
 import Foundation
 
-enum ApiError: Error {
-    case url
-    case network
-    case response
-    case emptyResponse
-    case parse
-    case errorResponse(status: Int, data: Decodable)
-    case error(status: Int, data: Data)
-}
-
 enum HttpMethod: String {
     case get = "GET"
     case post = "POST"

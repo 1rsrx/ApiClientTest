@@ -10,6 +10,7 @@
 		C60FF4F029D8F4A600C54D58 /* QiitaApiDeleteArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60FF4EF29D8F4A600C54D58 /* QiitaApiDeleteArticle.swift */; };
 		C60FF4F229D8F4C900C54D58 /* EmptyResopnse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60FF4F129D8F4C900C54D58 /* EmptyResopnse.swift */; };
 		C6551AFD29DF72C000A6CC61 /* MockApiResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C6551AFB29DF6B5400A6CC61 /* MockApiResponse.json */; };
+		C6441C8529E0EA2400F4E929 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6441C8429E0EA2400F4E929 /* ApiError.swift */; };
 		C6B8B14129D8041E0095E8C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8B14029D8041E0095E8C2 /* AppDelegate.swift */; };
 		C6B8B14329D8041E0095E8C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8B14229D8041E0095E8C2 /* SceneDelegate.swift */; };
 		C6B8B14529D8041E0095E8C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8B14429D8041E0095E8C2 /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 		C60FF4EF29D8F4A600C54D58 /* QiitaApiDeleteArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaApiDeleteArticle.swift; sourceTree = "<group>"; };
 		C60FF4F129D8F4C900C54D58 /* EmptyResopnse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResopnse.swift; sourceTree = "<group>"; };
 		C6551AFB29DF6B5400A6CC61 /* MockApiResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockApiResponse.json; sourceTree = "<group>"; };
+		C6441C8429E0EA2400F4E929 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		C6B8B13D29D8041E0095E8C2 /* ApiClientSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiClientSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B8B14029D8041E0095E8C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6B8B14229D8041E0095E8C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 			path = Client;
 			sourceTree = "<group>";
 		};
+		C6441C8329E0EA1600F4E929 /* ApiError */ = {
+			isa = PBXGroup;
+			children = (
+				C6441C8429E0EA2400F4E929 /* ApiError.swift */,
+			);
+			path = ApiError;
+			sourceTree = "<group>";
+		};
 		C6B8B13429D8041E0095E8C2 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +164,7 @@
 		C6B8B15B29D804B80095E8C2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				C6441C8329E0EA1600F4E929 /* ApiError */,
 				C60FF4F129D8F4C900C54D58 /* EmptyResopnse.swift */,
 				C6B8B15E29D805510095E8C2 /* QiitaApiErrorResponse.swift */,
 				C6B8B15929D804A60095E8C2 /* QiitaApiPostArticleRequestJSON.swift */,
@@ -282,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6B8B15D29D804C90095E8C2 /* QiitaApiPostArticle.swift in Sources */,
+				C6441C8529E0EA2400F4E929 /* ApiError.swift in Sources */,
 				C6B8B15F29D805510095E8C2 /* QiitaApiErrorResponse.swift in Sources */,
 				C6B8B16329D852220095E8C2 /* QiitaApiGetUserProfileResponseJSON.swift in Sources */,
 				C6B8B14529D8041E0095E8C2 /* ViewController.swift in Sources */,
