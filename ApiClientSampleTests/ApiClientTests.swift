@@ -8,9 +8,20 @@
 import XCTest
 @testable import ApiClientSample
 
-struct MockApiResponseJSON: Codable {
+protocol HttpResponseConvertible {
+    var statusCode: Int { get }
+    func toJSONData() -> Data
+}
+
+struct MockApiResponseJSON: Codable, HttpResponseConvertible {
     var statusCode: Int
     var message: String
+    
+    func toJSONData() -> Data {
+        let data = try! JSONEncoder().encode(self)
+        print(String(data: data, encoding: .utf8))
+        return data
+    }
 }
 
 struct MockApiRequest: HttpRequestable {
@@ -46,56 +57,78 @@ final class ApiClientSampleTests: XCTestCase {
     override func tearDownWithError() throws {
         
     }
-
-    func testExample() async throws {
+    
+    private func setResponse(responseDataObject: HttpResponseConvertible) {
         StubURLProtocol.requestHandler = { request in
             let response = HTTPURLResponse(
                 url: request.url!,
-                statusCode: 200,
+                statusCode: responseDataObject.statusCode,
                 httpVersion: "HTTP/2",
                 headerFields: [:]
             )!
-            
-            guard let jsonURL = Bundle.main.url(forResource: "MockApiResponse", withExtension: "json") else {
-                fatalError("MockApiResponse.json not found")
-            }
-            
-            guard let jsonData = try? String(contentsOf: jsonURL) else {
-                fatalError("fatal json to jsonData")
-            }
-            
-            let data = jsonData.data(using: .utf8)
-            return (response, data)
+                        
+            return (response, responseDataObject.toJSONData())
         }
-        
+    }
+    
+    private func generateSession() -> URLSession {
         let config = URLSessionConfiguration.default
         config.protocolClasses = [StubURLProtocol.self]
         let session = URLSession(configuration: config)
+        return session
+    }
+    
+    func testRequest_ステータスコードが200台のとき成功になること() async throws {
+        // ステータスコードが200台のとき、成功になること
+        let responseJSON = MockApiResponseJSON(statusCode: 200, message: "message")
+        setResponse(responseDataObject: responseJSON)
+        
+        let session = generateSession()
         
         let client = ApiClient(session: session)
-        
         let request = MockApiRequest()
         let result = await client.request(request)
         
         switch result {
-        case .success(let response):
-            print(response.message)
+        case .success(let data):
+            XCTAssertEqual(data.statusCode, responseJSON.statusCode)
+        case .failure(_):
+            XCTFail("Expected success but got failure")
+        }
+    }
+    
+    func testRequest_ステータスコードが200台でないとき失敗になること() async throws {
+        let responseJSON = MockApiResponseJSON(statusCode: 403, message: "message")
+        setResponse(responseDataObject: responseJSON)
+        
+        let session = generateSession()
+        let client = ApiClient(session: session)
+        let request = MockApiRequest()
+        let result = await client.request(request)
+        
+        switch result {
+        case .success(_):
+            XCTFail("Expected failure but got success")
         case .failure(let err):
-            print(err)
+            let expectValue = ApiError.error(status: responseJSON.statusCode, data: responseJSON.toJSONData()).localizedDescription
+            XCTAssertEqual(err.localizedDescription, expectValue)
         }
     }
 }
 
-typealias RequestHandler = ((URLRequest) throws -> (HTTPURLResponse, Data?))
+// URLSessionのテスト用
 class StubURLProtocol: URLProtocol {
-    static var requestHandler: RequestHandler?
+    
+    static var requestHandler: ((URLRequest) throws -> (HTTPURLResponse, Data?))?
 
     override class func canInit(with request: URLRequest) -> Bool {
         return true
     }
+    
     override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
+    
     override func startLoading() {
         guard let handler = Self.requestHandler else {
             fatalError("Handler is unavailable")
@@ -111,5 +144,6 @@ class StubURLProtocol: URLProtocol {
             client?.urlProtocol(self, didFailWithError: e)
         }
     }
+    
     override func stopLoading() {}
 }
