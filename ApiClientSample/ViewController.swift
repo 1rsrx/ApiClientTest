@@ -33,7 +33,7 @@ class ViewController: UIViewController {
             case .success(let response):
                 self.showAlert(title: "成功", message: "\(response)")
             case .failure(let err):
-                self.showAlert(title: "失敗", message: "\(err)")
+                self.showAlert(title: "失敗", message: "\(err.localizedDescription)")
             }
         }
     }
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
                 case .success(let response):
                     self.showAlert(title: "成功", message: "\(response)")
                 case .failure(let err):
-                    self.showAlert(title: "失敗", message: "\(err)")
+                    self.showAlert(title: "失敗", message: "\(err.localizedDescription)")
                 }
             }
             .store(in: &cancellables)
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
             case .success(let response):
                 self.showAlert(title: "成功", message: "\(response)")
             case .failure(let err):
-                self.showAlert(title: "失敗", message: "\(err)")
+                self.showAlert(title: "失敗", message: "\(err.localizedDescription)")
             }
         }
     }
