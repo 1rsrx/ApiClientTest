@@ -14,7 +14,7 @@ class QiitaApiPostArticle {
         completion: @escaping ((Result<QiitaApiPostArticleResponseJSON, ApiError>) -> Void)
     ) {
         let request = QiitaApiPostArticleRequest(httpBody: article)
-        ApiClient().request(request, completion: completion)
+        ApiClient(session: URLSession.shared).request(request, completion: completion)
     }
 }
 

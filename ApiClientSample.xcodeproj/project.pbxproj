@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C60FF4F029D8F4A600C54D58 /* QiitaApiDeleteArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60FF4EF29D8F4A600C54D58 /* QiitaApiDeleteArticle.swift */; };
 		C60FF4F229D8F4C900C54D58 /* EmptyResopnse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60FF4F129D8F4C900C54D58 /* EmptyResopnse.swift */; };
+		C6551AFD29DF72C000A6CC61 /* MockApiResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = C6551AFB29DF6B5400A6CC61 /* MockApiResponse.json */; };
 		C6441C8529E0EA2400F4E929 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6441C8429E0EA2400F4E929 /* ApiError.swift */; };
 		C6B8B14129D8041E0095E8C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8B14029D8041E0095E8C2 /* AppDelegate.swift */; };
 		C6B8B14329D8041E0095E8C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8B14229D8041E0095E8C2 /* SceneDelegate.swift */; };
@@ -27,11 +28,23 @@
 		C6B8B16929D855460095E8C2 /* ApiHeaderConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8B16829D855460095E8C2 /* ApiHeaderConstant.swift */; };
 		C6B8B16B29D855B10095E8C2 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8B16A29D855B10095E8C2 /* AppConstant.swift */; };
 		C6B8B16E29D863610095E8C2 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B8B16D29D863610095E8C2 /* ApiKey.swift */; };
+		C6C174DD29DED51400B1217A /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C174DC29DED51400B1217A /* ApiClientTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C6C174DE29DED51400B1217A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6B8B13529D8041E0095E8C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6B8B13C29D8041E0095E8C2;
+			remoteInfo = ApiClientSample;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C60FF4EF29D8F4A600C54D58 /* QiitaApiDeleteArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaApiDeleteArticle.swift; sourceTree = "<group>"; };
 		C60FF4F129D8F4C900C54D58 /* EmptyResopnse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResopnse.swift; sourceTree = "<group>"; };
+		C6551AFB29DF6B5400A6CC61 /* MockApiResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockApiResponse.json; sourceTree = "<group>"; };
 		C6441C8429E0EA2400F4E929 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		C6B8B13D29D8041E0095E8C2 /* ApiClientSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiClientSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B8B14029D8041E0095E8C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,10 +65,19 @@
 		C6B8B16829D855460095E8C2 /* ApiHeaderConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHeaderConstant.swift; sourceTree = "<group>"; };
 		C6B8B16A29D855B10095E8C2 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		C6B8B16D29D863610095E8C2 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
+		C6C174DA29DED51400B1217A /* ApiClientSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApiClientSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6C174DC29DED51400B1217A /* ApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C6B8B13A29D8041E0095E8C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6C174D729DED51400B1217A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -94,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				C6B8B13F29D8041E0095E8C2 /* ApiClientSample */,
+				C6C174DB29DED51400B1217A /* ApiClientSampleTests */,
 				C6B8B13E29D8041E0095E8C2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				C6B8B13D29D8041E0095E8C2 /* ApiClientSample.app */,
+				C6C174DA29DED51400B1217A /* ApiClientSampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,6 +145,7 @@
 				C6B8B14B29D804200095E8C2 /* LaunchScreen.storyboard */,
 				C6B8B14E29D804200095E8C2 /* Info.plist */,
 				C6B8B16A29D855B10095E8C2 /* AppConstant.swift */,
+				C6551AFB29DF6B5400A6CC61 /* MockApiResponse.json */,
 			);
 			path = ApiClientSample;
 			sourceTree = "<group>";
@@ -157,6 +182,14 @@
 			path = Secure;
 			sourceTree = "<group>";
 		};
+		C6C174DB29DED51400B1217A /* ApiClientSampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				C6C174DC29DED51400B1217A /* ApiClientTests.swift */,
+			);
+			path = ApiClientSampleTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,6 +210,24 @@
 			productReference = C6B8B13D29D8041E0095E8C2 /* ApiClientSample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C6C174D929DED51400B1217A /* ApiClientSampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6C174E229DED51400B1217A /* Build configuration list for PBXNativeTarget "ApiClientSampleTests" */;
+			buildPhases = (
+				C6C174D629DED51400B1217A /* Sources */,
+				C6C174D729DED51400B1217A /* Frameworks */,
+				C6C174D829DED51400B1217A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6C174DF29DED51400B1217A /* PBXTargetDependency */,
+			);
+			name = ApiClientSampleTests;
+			productName = ApiClientSampleTests;
+			productReference = C6C174DA29DED51400B1217A /* ApiClientSampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,11 +235,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					C6B8B13C29D8041E0095E8C2 = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					C6C174D929DED51400B1217A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = C6B8B13C29D8041E0095E8C2;
 					};
 				};
 			};
@@ -206,6 +261,7 @@
 			projectRoot = "";
 			targets = (
 				C6B8B13C29D8041E0095E8C2 /* ApiClientSample */,
+				C6C174D929DED51400B1217A /* ApiClientSampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -218,6 +274,14 @@
 				C6B8B14D29D804200095E8C2 /* LaunchScreen.storyboard in Resources */,
 				C6B8B14A29D804200095E8C2 /* Assets.xcassets in Resources */,
 				C6B8B14829D8041E0095E8C2 /* Main.storyboard in Resources */,
+				C6551AFD29DF72C000A6CC61 /* MockApiResponse.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6C174D829DED51400B1217A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +312,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C6C174D629DED51400B1217A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6C174DD29DED51400B1217A /* ApiClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C6C174DF29DED51400B1217A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6B8B13C29D8041E0095E8C2 /* ApiClientSample */;
+			targetProxy = C6C174DE29DED51400B1217A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C6B8B14629D8041E0095E8C2 /* Main.storyboard */ = {
@@ -442,6 +522,44 @@
 			};
 			name = Release;
 		};
+		C6C174E029DED51400B1217A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KT557Q945S;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kuroda.ApiClientSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ApiClientSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ApiClientSample";
+			};
+			name = Debug;
+		};
+		C6C174E129DED51400B1217A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KT557Q945S;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kuroda.ApiClientSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ApiClientSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ApiClientSample";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -459,6 +577,15 @@
 			buildConfigurations = (
 				C6B8B15229D804200095E8C2 /* Debug */,
 				C6B8B15329D804200095E8C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6C174E229DED51400B1217A /* Build configuration list for PBXNativeTarget "ApiClientSampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6C174E029DED51400B1217A /* Debug */,
+				C6C174E129DED51400B1217A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -11,7 +11,7 @@ import Combine
 class QiitaApiDeleteArticle {
     func execute(itemID: String) async -> Result<EmptyResponse, ApiError> {
         let request = QiitaApiDeleteArticleRequest(itemID: itemID)
-        return await ApiClient().request(request)
+        return await ApiClient(session: URLSession.shared).request(request)
     }
 }
 

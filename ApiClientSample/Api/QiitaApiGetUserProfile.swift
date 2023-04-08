@@ -12,7 +12,7 @@ class QiitaApiGetUserProfile {
     
     func execute() -> AnyPublisher<Result<QiitaApiGetUserProfileResponseJSON, ApiError>, Never> {
         let request = QiitaApiGetUserProfileRequest()
-        return ApiClient().request(request)
+        return ApiClient(session: URLSession.shared).request(request)
     }
 }
 
